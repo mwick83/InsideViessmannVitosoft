@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 import telnetlib
 
 # This little script communicates with e.g. a Raspberry Pi running vcontrold, which
@@ -80,7 +83,7 @@ if VS2: # VS2
 
 def buildVS2Package(fc,addr,length):
 	crc = (5 + 0 + fc + ((addr >> 8) & 0xFF) + (addr & 0xFF) + length) & 0xFF
-	return ('%02X ' * 8) % (VS2_DAP_STANDARD,5,0,fc,(addr >> 8),(addr & 0xF8),length,crc)
+	return ('%02X ' * 8) % (VS2_DAP_STANDARD,5,0,fc,(addr >> 8),(addr & 0xFF),length,crc)
 
 readCmds = [
 			{ 'addr':0x00F8,'size':8,'cmd':Virtual_READ, 'name':'ID' },
