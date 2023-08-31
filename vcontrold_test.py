@@ -142,4 +142,9 @@ for cmd in readCmds:
 		if checksum != out[-1]:
 			continue
 		out = out[2:-1]
-		print('%04x : %s - %s' % (cmd['addr'],out[6:6+cmd['size']].hex(),cmd['name']))
+		val = 0
+		if cmd['size'] == 1:
+			val = out[6]
+		elif cmd['size'] == 2:
+			val = (out[6] + (out[7] << 8)) * 0.1
+		print('%04x : %.1f [%s] - %s' % (cmd['addr'],val,out[6:6+cmd['size']].hex(),cmd['name']))
