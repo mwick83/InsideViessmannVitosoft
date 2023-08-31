@@ -5,7 +5,7 @@ from xml.etree import ElementTree as etree
 import pprint
 import sys
 
-pp = pprint.PrettyPrinter(width=200,compact=True)
+pp = pprint.PrettyPrinter(width=200)
 
 # This path needs to be adjusted to point to a directory for all XML files
 DATAPATH = "./data/"

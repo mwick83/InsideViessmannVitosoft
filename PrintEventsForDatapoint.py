@@ -7,7 +7,7 @@ import sys
 import binascii
 import re
 
-pp = pprint.PrettyPrinter(width=200,compact=True)
+pp = pprint.PrettyPrinter(width=200)
 
 # This path needs to be adjusted to point to a directory for all XML files
 DATAPATH = "./data/"
